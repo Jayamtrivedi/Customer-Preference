@@ -1,0 +1,22 @@
+C50 Model
+# create 2 partitions  for test set and training set 
++Testset<- createDataPartition(y = Cleansurvey$Brand, p=.75, list = FALSE)
++TrainSet<- cleansurvey[inTrain,]
++testindesx<- cleansurvey[-inTrain,]
+
+
+# model C50
+
++C50model <- train(Brand~.,data=Testset,method = "C5.0",tuneGrid = C50Grid,trControl = FitControl, metric = "Accuracy",importance = TRUE)  
+
+#plot model
+
++plot(C50model)
++print(C50model)
+#predict
+
++myprediction<- predict(C50model, TrainSet)
++cm1<-cm1(C50model,newdata=TrainSet)
++cm1
++
++summary(myprediction)
