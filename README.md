@@ -1,4 +1,4 @@
-# Customer-Preference
+# Customer-Preference  using survey data spaning 80,000 records
 Data Anlysis Project
 
 Project uses incomplete surveys to predict customers buying pattern .
